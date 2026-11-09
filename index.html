@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>아빠, 생일 축하해! 🎂</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="app-container" id="app">
+    <!-- 배경 은은한 반짝임 -->
+    <div class="sparkle-bg" id="sparkleBg"></div>
+
+    <!-- SCENE 1 & 2: 케이크 및 축하 문구 -->
+    <div class="scene active" id="scene1and2">
+      <div class="scene-cake-container">
+        <!-- SCENE 2 문구 영역 -->
+        <div class="greeting-box">
+          <div class="greeting-line1" id="line1"></div>
+          <div class="greeting-line2" id="line2"></div>
+        </div>
+
+        <!-- SCENE 1 케이크 영역 -->
+        <div class="cake-stage" id="cakeStage">
+          <!-- 4. 체리 -->
+          <div class="cherry-top" id="cherry"></div>
+          <!-- 3. 생크림 -->
+          <div class="cream-top" id="cream">
+            <div class="cream-drip drip-1"></div>
+            <div class="cream-drip drip-2"></div>
+            <div class="cream-drip drip-3"></div>
+            <div class="cream-drip drip-4"></div>
+          </div>
+          <!-- 2. 2층 케이크 -->
+          <div class="cake-layer-2" id="layer2"></div>
+          <!-- 1. 1층 케이크 -->
+          <div class="cake-layer-1" id="layer1"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCENE 3: 전환용 빈 핑크 배경 -->
+    <div class="scene" id="scene3"></div>
+
+    <!-- SCENE 4: 비둘기와 편지봉투 -->
+    <div class="scene" id="scene4">
+      <div class="scene-bird-container">
+        <!-- SVG 비둘기 -->
+        <svg class="bird" id="bird" viewBox="0 0 100 80">
+          <path fill="#ffffff" d="M20,40 Q35,20 60,25 Q75,28 85,35 Q75,45 60,45 Q40,50 20,40 Z"/>
+          <!-- 날개 -->
+          <path class="bird-wing" fill="#f0f0f0" d="M35,30 Q50,5 70,15 Q55,30 35,30 Z"/>
+          <!-- 눈 -->
+          <circle cx="75" cy="32" r="2" fill="#333"/>
+          <!-- 부리 -->
+          <polygon points="85,35 93,37 85,40" fill="#fca311"/>
+        </svg>
+
+        <!-- 비둘기가 물고 이동할 미니 편지 -->
+        <div class="carried-envelope" id="carriedEnv" style="display:none;"></div>
+
+        <!-- 중앙에 안착할 편지봉투 -->
+        <div class="envelope-wrapper" id="envelope">
+          <div class="envelope-flap"></div>
+          <div class="envelope-body">
+            <div class="envelope-heart"></div>
+          </div>
+        </div>
+
+        <!-- 안내 문구 -->
+        <div class="click-prompt" id="clickPrompt">편지를 눌러보세요</div>
+      </div>
+    </div>
+
+    <!-- SCENE 5: 편지 본문 -->
+    <div class="scene" id="scene5">
+      <div class="scene-letter-paper">
+        <div class="letter-header">
+          <div class="letter-title">A LETTER FOR DAD ♡</div>
+          <div class="letter-to">To. 아빠에게</div>
+        </div>
+        
+        <div class="letter-body-wrapper" id="letterScrollBox">
+          <div class="letter-content" id="typedLetter"></div>
+        </div>
+
+        <div class="letter-footer" id="letterFooter">
+          From. 딸랑이 ♡
+        </div>
+      </div>
+      <div class="ending-sparkles" id="endingSparkles"></div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
